@@ -329,7 +329,7 @@ public class RavenGame {
 		return true;
 	}
 
-	protected void addBots(int numBotsToAdd) {
+	public void addBots(int numBotsToAdd) {
 		Log.info("game", "Adding " + numBotsToAdd + " bots to the map");
 		while (numBotsToAdd-- > 0) {
 			// create a bot. (its position is irrelevant at this point because

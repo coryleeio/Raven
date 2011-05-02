@@ -194,10 +194,16 @@ public class RavenMap {
 	}
 	
 	public double calculateCostToTravelBetweenNodes(int node1, int node2) {
+		try{
 		if (node1 < 0 || node2 < 0 || node1 >= navGraph.numNodes() || node2 >= navGraph.numNodes())
 			throw new IndexOutOfBoundsException("Invalid node index: " + node1 + " to " + node2);
-		
+		System.out.println("pathval = " + pathCosts.get(new Pair<Integer,Integer>(node1, node2)));
 		return pathCosts.get(new Pair<Integer,Integer>(node1, node2));
+		}catch(java.lang.NullPointerException ex){
+			System.out.print("mumble");
+			return .5;
+			
+		}
 	}
 	
 	/** returns the position of a graph node selected at random */
